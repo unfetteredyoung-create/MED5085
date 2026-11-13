@@ -1,0 +1,23 @@
+#!/bin/bash
+# 在学校“启明”集群上提交：bsub < run_hpc.lsf
+# 队列名 / GPU 资源写法请按集群手册修改（下面的 -q 和 -gpu 只是示例）
+#BSUB -J lung_adc
+#BSUB -q gpu
+#BSUB -n 8
+#BSUB -gpu "num=1"
+#BSUB -W 02:00
+#BSUB -o lung_adc.%J.out
+#BSUB -e lung_adc.%J.err
+
+set -e
+cd "$LS_SUBCWD"
+
+module load python/anaconda3/2022.10
+source activate
+conda activate myenv          # 课程统一的环境（python 3.9 + torch 2.0.1）
+
+# 第一次运行时补装依赖
+python -c "import radiomics, SimpleITK, nibabel, statsmodels, shap" 2>/dev/null || \
+    pip install -r requirements.txt --only-binary=pyradiomics
+
+python run_all.py              # 真实数据用：python run_all.py --real

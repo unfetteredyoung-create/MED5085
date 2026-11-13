@@ -1,0 +1,16 @@
+# 在课程环境（python 3.9 + torch 2.0.1 + cu117，见 环境配置.txt）基础上补装：
+#   pip install -r requirements.txt
+# torch / torchvision 请按课程说明单独安装（带 CUDA 版本），这里不重复写。
+# pyradiomics 在 Windows 上请用 --only-binary=pyradiomics，避免从源码编译。
+numpy==1.26.4
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+statsmodels>=0.14
+matplotlib>=3.7
+nibabel>=5.0
+SimpleITK>=2.3
+scikit-image>=0.21
+pyradiomics>=3.1
+shap>=0.44
+joblib>=1.3

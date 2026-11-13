@@ -1,0 +1,5 @@
+{
+  "_note": "B LASSO 选 λ 用交叉验证误差最小值（λ_min），而不是更稀疏的 1-SE 规则",
+  "_rerun": "python run_all.py --exp v1c_lasso_min --base v0_baseline --steps 4,6",
+  "LASSO_ONE_SE": false
+}

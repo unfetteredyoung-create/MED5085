@@ -1,0 +1,5 @@
+{
+  "_note": "B1 瘤周影像组学：结节外 3 mm 环形区域再提一遍特征（前缀 peri_），与瘤内特征一起筛选",
+  "_rerun": "python run_all.py --exp v1a_peritumoral --base v0_baseline --steps 2,4,6",
+  "PERITUMORAL_MM": 3
+}
